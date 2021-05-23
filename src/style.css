@@ -1,0 +1,20 @@
+.List {
+  list-style: none;
+}
+
+.Link {
+  display: block;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.Title {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+

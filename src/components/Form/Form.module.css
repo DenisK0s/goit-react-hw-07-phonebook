@@ -1,0 +1,24 @@
+.Form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 300px;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  background-color: mediumorchid;
+}
+
+.FormButton {
+  min-width: 50px;
+
+  padding: 10px;
+
+  border: none;
+
+  border-radius: 2px;
+
+  background-color: mediumseagreen;
+}

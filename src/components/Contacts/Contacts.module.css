@@ -1,0 +1,24 @@
+.Contacts {
+  width: 500px;
+
+  padding-top: 20px;
+}
+
+.ContactsList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.ContactsListItem {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.ContactsListItem + .ContactsListItem {
+  margin-top: 15px;
+}
+
+.ContactValue {
+  margin-right: 10px;
+}
