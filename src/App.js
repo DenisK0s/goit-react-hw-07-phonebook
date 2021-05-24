@@ -9,7 +9,8 @@ import Contacts from './components/Contacts';
 import Filter from './components/Filter';
 
 //операции
-import * as operations from '../src/redux/phonebook/phonebook-operations';
+// import * as operations from '../src/redux/phonebook/phonebook-operations';
+import { phonebookOperations } from '../src/redux/phonebook';
 
 class App extends Component {
   componentDidMount() {
@@ -30,7 +31,7 @@ class App extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-  fetchContacts: () => dispatch(operations.fetchContact()),
+  fetchContacts: () => dispatch(phonebookOperations.fetchContact()),
 });
 
 export default connect(null, mapDispatchToProps)(App);

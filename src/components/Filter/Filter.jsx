@@ -2,8 +2,7 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-//действия
-import * as actions from '../../redux/phonebook/phonebook-actions';
+import { phonebookSelectors, filterContacts } from '../../redux/phonebook';
 
 //компоненты
 import Input from '../Input';
@@ -27,14 +26,14 @@ Filter.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    filterName: state.phonebook.filter,
+    filterName: phonebookSelectors.getFilter(state),
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     onFilterChange: event =>
-      dispatch(actions.filterContacts(event.currentTarget.value)),
+      dispatch(filterContacts(event.currentTarget.value)),
   };
 };
 

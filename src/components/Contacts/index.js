@@ -1,1 +1,1 @@
-export { default } from './Contacts.jsx';
+export { default } from './Contacts.container';

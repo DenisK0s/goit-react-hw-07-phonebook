@@ -1,9 +1,5 @@
 //модули
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-
-//операции
-import * as operations from '../../redux/phonebook/phonebook-operations';
 
 //стили
 import styles from './Contacts.module.css';
@@ -34,25 +30,4 @@ Contacts.propTypes = {
   onDeleteContact: PropTypes.func,
 };
 
-const filterContacts = (allContacts, filter) => {
-  const filterRegisterCorretion = filter.toLowerCase();
-
-  return allContacts.filter(({ name }) =>
-    name.toLowerCase().includes(filterRegisterCorretion),
-  );
-};
-
-const mapStateToProps = ({ phonebook: { contacts, filter } }) => {
-  const currentContactsList =
-    filter !== '' ? filterContacts(contacts, filter) : contacts;
-
-  return {
-    contactsItems: currentContactsList,
-  };
-};
-
-const mapDispatchToProps = dispatch => {
-  return { onDeleteContact: id => dispatch(operations.deleteContact(id)) };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Contacts);
+export default Contacts;

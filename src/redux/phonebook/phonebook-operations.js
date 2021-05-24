@@ -15,7 +15,7 @@ import {
 axios.defaults.baseURL = 'http://localhost:4040';
 axios.defaults.headers.post['Content-Type'] = 'application/json';
 
-export const fetchContact = () => dispatch => {
+const fetchContact = () => dispatch => {
   dispatch(fetchContactRequest());
 
   axios
@@ -24,7 +24,7 @@ export const fetchContact = () => dispatch => {
     .catch(error => dispatch(fetchContactError(error)));
 };
 
-export const addContact = contactData => dispatch => {
+const addContact = contactData => dispatch => {
   dispatch(addContactRequest());
 
   axios
@@ -33,7 +33,7 @@ export const addContact = contactData => dispatch => {
     .catch(error => dispatch(addContactError(error)));
 };
 
-export const deleteContact = contactId => dispatch => {
+const deleteContact = contactId => dispatch => {
   dispatch(deleteContactRequest());
 
   axios
@@ -41,3 +41,7 @@ export const deleteContact = contactId => dispatch => {
     .then(() => dispatch(deleteContactSuccess(contactId)))
     .catch(error => dispatch(deleteContactError(error)));
 };
+
+const operations = { fetchContact, addContact, deleteContact };
+
+export default operations;

@@ -1,16 +1,16 @@
 import { createAction } from '@reduxjs/toolkit';
 
-//забрать все
+//забрать все контакты
 export const fetchContactRequest = createAction('contacts/fetchContactRequest');
 export const fetchContactSuccess = createAction('contacts/fetchContactSuccess');
 export const fetchContactError = createAction('contacts/fetchContactError');
 
-//добавить
+//добавить контакт
 export const addContactRequest = createAction('contacts/addContactRequest');
 export const addContactSuccess = createAction('contacts/addContactSuccess');
 export const addContactError = createAction('contacts/addContactError');
 
-//удалить
+//удалить контакт
 export const deleteContactRequest = createAction(
   'contacts/deleteContactRequest',
 );
@@ -19,5 +19,5 @@ export const deleteContactSuccess = createAction(
 );
 export const deleteContactError = createAction('contacts/deleteContactError');
 
-//фильтр
+//фильтр контактов
 export const filterContacts = createAction('phonebook/filterContacts');

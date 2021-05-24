@@ -2,8 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-//операции
-import * as operations from '../../redux/phonebook/phonebook-operations';
+import { phonebookOperations, phonebookSelectors } from '../../redux/phonebook';
 
 //компоненты
 import Input from '../Input';
@@ -77,12 +76,12 @@ class Form extends Component {
   }
 }
 
-const mapStateToProps = ({ phonebook: { contacts } }) => ({
-  currentContactsList: contacts,
+const mapStateToProps = state => ({
+  currentContactsList: phonebookSelectors.getContacts(state),
 });
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: data => dispatch(operations.addContact(data)),
+  onSubmit: data => dispatch(phonebookOperations.addContact(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
